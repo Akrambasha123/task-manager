@@ -40,7 +40,7 @@ Ensure you have the following installed:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/username/task-manager.git
+   git clone https://github.com/Akrambasha123/task-manager.git
    cd task-manager
    ```
 
@@ -104,6 +104,4 @@ Ensure you have the following installed:
 
 ---
 
-## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
