@@ -85,19 +85,22 @@ Ensure you have the following installed:
 
 ### Step 3: Task Reordering
 <p align="center">
-    <img src="3.png" alt="Reordering Tasks" width="800">
+    <img src="4.png" alt="Reordering Tasks" width="800">
 </p>
 
 ### Step 4: Marking Tasks as Complete
 <p align="center">
-    <img src="images/mark-complete.png" alt="Marking Tasks Complete" width="800">
+    <img src="3.png" alt="Marking Tasks Complete" width="800">
 </p>
 
 ---
 
 ## Video Walkthrough
 
-[![Task Manager Video Guide](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+<video controls width="800">
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 ---
 
