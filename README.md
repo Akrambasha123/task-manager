@@ -75,17 +75,17 @@ Ensure you have the following installed:
 
 ### Step 1: Dashboard View
 <p align="center">
-    <img src="images/dashboard.png" alt="Task Manager Dashboard" width="800">
+    <img src="1.png" alt="Task Manager Dashboard" width="800">
 </p>
 
 ### Step 2: Adding a New Task
 <p align="center">
-    <img src="images/add-task.png" alt="Add Task View" width="800">
+    <img src="2.png" alt="Add Task View" width="800">
 </p>
 
 ### Step 3: Task Reordering
 <p align="center">
-    <img src="images/reorder-task.png" alt="Reordering Tasks" width="800">
+    <img src="3.png" alt="Reordering Tasks" width="800">
 </p>
 
 ### Step 4: Marking Tasks as Complete
