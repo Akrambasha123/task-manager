@@ -97,10 +97,11 @@ Ensure you have the following installed:
 
 ## Video Walkthrough
 
-<video controls width="800">
-    <source src="video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<h2>Video Walkthrough</h2>
+<p>
+    <a href="https://youtu.be/cZoYewBNQC4" target="_blank">Watch the Video Demonstration on YouTube</a>
+</p>
+
 
 ---
 
