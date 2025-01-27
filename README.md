@@ -97,7 +97,6 @@ Ensure you have the following installed:
 
 ## Video Walkthrough
 
-<h2>Video Walkthrough</h2>
 <p>
     <a href="https://youtu.be/cZoYewBNQC4" target="_blank">Watch the Video Demonstration on YouTube</a>
 </p>
