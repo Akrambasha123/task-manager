@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
-
-    <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('assets/fontawesome/css/all.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/fontawesome/css/all.min.css') }}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
     <style>
         body {
@@ -51,8 +50,8 @@
             transform: scale(1.05);
         }
         .task-section small {
-                font-size: 0.85rem;
-            }
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
@@ -88,24 +87,27 @@
                     <h5 class="text-white mb-4">Pending Tasks</h5>
                     <ul id="pendingTasks" class="list-group">
                         @foreach ($tasks->where('is_completed', false) as $task)
-                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 mb-3 p-4 rounded shadow-sm"
-                                data-id="{{ $task->id }}"
-                                style="background-color: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                            <li class="list-group-item d-flex justify-content-between align-items-center"
+                                data-id="{{ $task->id }}">
                                 <div>
-                                    <strong class="text-dark fs-5">{{ $task->title }}</strong>
+                                    <input type="checkbox" class="task-checkbox me-2" data-id="{{ $task->id }}">
+                                    <strong>{{ $task->title }}</strong>
                                     <p class="text-muted mb-2">{{ $task->description }}</p>
-                                    <small class="text-muted">Last updated: {{ $task->updated_at->format('M d, Y h:i A') }}</small>
+                                    <small class="text-muted">Last updated:
+                                        {{ $task->updated_at->format('M d, Y h:i A') }}</small>
                                 </div>
-                                <div class="d-flex justify-content-between align-tems-center">
+                                <div>
                                     <button type="button" class="btn btn-warning btn-sm me-1" data-bs-toggle="modal"
                                         data-bs-target="#editTaskModal" data-id="{{ $task->id }}"
                                         data-title="{{ $task->title }}" data-description="{{ $task->description }}">
                                         <i class="fa fa-pencil"></i>
                                     </button>
-                                    <form action="{{ route('tasks.destroy', $task) }}" method="POST" style="display: inline;">
+                                    <form action="{{ route('tasks.destroy', $task) }}" method="POST"
+                                        style="display: inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                        <button type="submit" class="btn btn-danger btn-sm"><i
+                                                class="fa fa-trash"></i></button>
                                     </form>
                                 </div>
                             </li>
@@ -113,31 +115,34 @@
                     </ul>
                 </div>
             </div>
-        
             <!-- Completed Tasks -->
             <div class="col-md-6">
                 <div class="task-section bg-success rounded p-3">
                     <h5 class="text-white mb-4">Completed Tasks</h5>
                     <ul id="completedTasks" class="list-group">
                         @foreach ($tasks->where('is_completed', true) as $task)
-                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 mb-3 p-4 rounded shadow-sm"
-                                data-id="{{ $task->id }}"
-                                style="background-color: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                            <li class="list-group-item d-flex justify-content-between align-items-center"
+                                data-id="{{ $task->id }}">
                                 <div>
-                                    <strong class="text-dark fs-5">{{ $task->title }}</strong>
+                                    <input type="checkbox" class="task-checkbox me-2" data-id="{{ $task->id }}"
+                                        checked>
+                                    <strong>{{ $task->title }}</strong>
                                     <p class="text-muted mb-2">{{ $task->description }}</p>
-                                    <small class="text-muted">Last updated: {{ $task->updated_at->format('M d, Y h:i A') }}</small>
+                                    <small class="text-muted">Last updated:
+                                        {{ $task->updated_at->format('M d, Y h:i A') }}</small>
                                 </div>
-                                <div class="d-flex justify-content-between align-tems-center">
+                                <div>
                                     <button type="button" class="btn btn-warning btn-sm me-1" data-bs-toggle="modal"
                                         data-bs-target="#editTaskModal" data-id="{{ $task->id }}"
                                         data-title="{{ $task->title }}" data-description="{{ $task->description }}">
                                         <i class="fa fa-pencil"></i>
                                     </button>
-                                    <form action="{{ route('tasks.destroy', $task) }}" method="POST" style="display: inline;">
+                                    <form action="{{ route('tasks.destroy', $task) }}" method="POST"
+                                        style="display: inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                        <button type="submit" class="btn btn-danger btn-sm"><i
+                                                class="fa fa-trash"></i></button>
                                     </form>
                                 </div>
                             </li>
@@ -146,8 +151,6 @@
                 </div>
             </div>
         </div>
-    
-        
     </div>
     <!-- Edit Task Modal -->
     <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
@@ -176,8 +179,8 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('assets/fontawesome/js/all.min.js')}}"></script>
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/fontawesome/js/all.min.js') }}"></script>
     <script>
         const pendingTasks = document.getElementById('pendingTasks');
         const completedTasks = document.getElementById('completedTasks');
@@ -242,6 +245,59 @@
             form.action = '/tasks/' + taskId;
             document.getElementById('editTitle').value = taskTitle;
             document.getElementById('editDescription').value = taskDescription;
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const taskId = this.dataset.id;
+                const isCompleted = this.checked;
+                const taskItem = this.closest('li');
+                const targetList = isCompleted ? document.getElementById('completedTasks') : document
+                    .getElementById('pendingTasks');
+                fetch(`/tasks/${taskId}/toggle-complete`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        is_completed: isCompleted
+                    })
+                }).then(() => {
+                    targetList.appendChild(taskItem);
+                    taskItem.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                });
+            });
+        });
+        new Sortable(pendingTasks, {
+            group: 'tasks',
+            animation: 150,
+            ghostClass: 'dragging',
+            onEnd: function(evt) {
+                const order = Array.from(pendingTasks.children).map(item => item.dataset.id);
+                updateOrder(order, false);
+            },
+            onAdd: function(evt) {
+                toggleCompletion(evt.item.dataset.id, false);
+                evt.item.querySelector('.task-checkbox').checked = false; // Uncheck when moved to pending
+            }
+        });
+        new Sortable(completedTasks, {
+            group: 'tasks',
+            animation: 150,
+            ghostClass: 'dragging',
+            onEnd: function(evt) {
+                const order = Array.from(completedTasks.children).map(item => item.dataset.id);
+                updateOrder(order, true);
+            },
+            onAdd: function(evt) {
+                toggleCompletion(evt.item.dataset.id, true);
+                evt.item.querySelector('.task-checkbox').checked = true; // Check when moved to completed
+            }
         });
     </script>
 </body>
